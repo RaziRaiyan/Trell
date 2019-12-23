@@ -26,8 +26,8 @@ Grey dark 3: #999
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.6);
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.6);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.3);
   --line: 1px solid var(--color-grey-dark-3); }
 
 * {
@@ -86,6 +86,8 @@ body {
 
 .detail {
   display: flex;
+  font-size: 1.3rem;
+  font-weight: 600;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line); }
@@ -94,15 +96,15 @@ body {
   flex: 0 0 60%;
   margin-right: 4.5rem;
   padding: 1.5rem 3rem;
-  font-size: 1.15rem;
-  font-weight: 600;
   border-radius: 5px;
   background-color: #fff;
   box-shadow: var(--shadow-light); }
 
 .user-reviews {
-  background-color: yellowgreen;
-  flex: 1; }
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center; }
 
 .logo {
   height: 3.25rem;
@@ -284,8 +286,13 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s; }
+  .btn-inline span {
+    margin-left: 3px;
+    transition: margin-left 0.2s; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 8px; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1s infinite; }
@@ -342,3 +349,47 @@ body {
     border: 3px solid #fff; }
     .recommend__photo:not(:last-child) {
       margin-right: -2rem; }
+
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden; }
+  .review__text {
+    margin-bottom: 1rem;
+    z-index: 10;
+    position: relative; }
+  .review__user {
+    display: flex;
+    align-items: center; }
+  .review__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    margin-right: 1.5rem;
+    border-radius: 50%; }
+  .review__user-box {
+    margin-right: auto;
+    line-height: 1.25rem; }
+  .review__user-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem; }
+  .review__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3); }
+  .review__rating {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--color-primary); }
+  .review::before {
+    content: "\201C";
+    position: absolute;
+    top: -3rem;
+    left: -1.25rem;
+    font-size: 16rem;
+    font-family: sans-serif;
+    line-height: 1;
+    color: var(--color-grey-light-2); }
